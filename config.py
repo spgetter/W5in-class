@@ -1,6 +1,8 @@
 import os
+from dotenv import load_dotenv
 
 basedir = os.path.abspath(os.path.dirname(__file__))
+# load_dotenv(os.ath.join(basedir, '.env'))
 
 # Give access to the project in ANY os we find oursleves in
 # Allow outside files/folders to be added to the project from the 
@@ -12,8 +14,10 @@ class Config():
         Using Environment varialbles where available
         Otherwise create the config variables if not done already.
     """
-
+    # FLASK_APP = os.environ.get('FLASK_APP')
+    # FLASK_ENV =os.environ.get('FLASK_ENV')
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'You will never guess'
-    # SQLALCHEMY_DATABASE_URI = os.environ.get('DEPLOY_DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'app.db')
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:080033@127.0.0.1:5432/drone-collection'
+    # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'app.db')
+    # SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:********@127.0.0.1:5432/drone-collection'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False # Turn off Update Messages from the sqlalchemy
