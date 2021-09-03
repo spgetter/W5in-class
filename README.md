@@ -2,7 +2,7 @@
 
 ##Deployment
     - Deployed on Heroku
-    - update with your <heroku-url>
+    - https://drone-inventory-stephen.herokuapp.com
 
 #Running on a local machine
     - To get all dependencies installed
